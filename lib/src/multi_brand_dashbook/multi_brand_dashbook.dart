@@ -1,6 +1,4 @@
 import 'package:dashbook/dashbook.dart';
-import 'package:dashbook/src/dashbook_config.dart';
-import 'package:dashbook/src/multi_brand_dashbook/dashbook_brand.dart';
 import 'package:dashbook/src/multi_brand_dashbook/small_app.dart';
 import 'package:dashbook/src/multi_brand_dashbook/wide_app.dart';
 import 'package:dashbook/src/preferences.dart';
@@ -70,8 +68,7 @@ class MultiBrandApp extends StatelessWidget {
           selectedBrand: brands.firstWhere(
             (element) => element.path == state.params['brand'],
           ),
-          currentChapter:
-              getChapter(state.params['story']!, state.params['chapter']!),
+          currentChapter: getChapter(state.params['story']!, state.params['chapter']!),
           config: config,
         ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) =>
@@ -112,8 +109,7 @@ class MultiBrandDashbook extends StatefulWidget {
 }
 
 class _MultiBrandDashbookState extends State<MultiBrandDashbook> {
-  List<ThemeSettings> get themeSettings =>
-      widget.brands.map((e) => e.themeSettings).toList();
+  List<ThemeSettings> get themeSettings => widget.brands.map((e) => e.themeSettings).toList();
 
   @override
   Widget build(BuildContext context) {
